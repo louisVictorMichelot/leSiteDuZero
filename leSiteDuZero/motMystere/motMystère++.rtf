@@ -1,0 +1,174 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red253\green143\blue63;\red31\green31\blue36;\red252\green106\blue93;
+\red255\green255\blue255;\red252\green95\blue163;\red93\green216\blue255;\red208\green168\blue255;\red65\green161\blue192;
+\red161\green103\blue230;\red208\green191\blue105;\red161\green103\blue230;\red103\green183\blue164;\red108\green121\blue134;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c99131\c56076\c24611;\csgenericrgb\c12054\c12284\c14131;\csgenericrgb\c98912\c41558\c36568;
+\csgenericrgb\c100000\c100000\c100000\c85000;\csgenericrgb\c98839\c37355\c63833;\csgenericrgb\c36295\c84643\c99897;\csgenericrgb\c81681\c65692\c99927;\csgenericrgb\c25490\c63137\c75294;
+\csgenericrgb\c63137\c40392\c90196;\csgenericrgb\c81498\c74939\c41233;\csgenericrgb\c63232\c40219\c90115;\csgenericrgb\c40392\c71765\c64314;\csgenericrgb\c42394\c47462\c52518;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab593
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 #include \cf4 <iostream>\cf5 \
+\cf2 #include \cf4 <fstream>\cf5 \
+\cf2 #include \cf4 <string>\cf5 \
+\cf2 #include \cf4 <ctime>\cf5 \
+\cf2 #include \cf4 <cstdlib>\cf5 \
+
+\f1\b \cf6 using
+\f0\b0 \cf5  
+\f1\b \cf6 namespace
+\f0\b0 \cf5  \cf7 std\cf5 ;\
+\
+\
+\cf8 string\cf5  \cf9 randomWord\cf5 ()\
+\{\
+    \cf8 string\cf5  ligne;\
+    \cf8 ifstream\cf5  monFlux(\cf4 "/Users/louisvictormichelot/Desktop/cpp/mot.txt"\cf5 );\
+    
+\f1\b \cf6 int
+\f0\b0 \cf5  r6(\cf10 rand\cf5 () % \cf11 5\cf5 );\
+    r6++;\
+    
+\f1\b \cf6 for
+\f0\b0 \cf5 (
+\f1\b \cf6 int
+\f0\b0 \cf5  t(\cf11 0\cf5 );t<r6;t++)\
+    \{\cf10 getline\cf5 (monFlux, ligne);\}\
+    
+\f1\b \cf6 return
+\f0\b0 \cf5  ligne;\
+\}\
+\
+ 
+\f1\b \cf6 void
+\f0\b0 \cf5  \cf9 randomString\cf5 (\cf8 string\cf5  a, 
+\f1\b \cf6 int
+\f0\b0 \cf5  b, 
+\f1\b \cf6 int
+\f0\b0 \cf5  b2)\
+ \{\
+ 
+\f1\b \cf6 for
+\f0\b0 \cf5 (
+\f1\b \cf6 int
+\f0\b0 \cf5  i(\cf11 1\cf5 ) ; i<=b2 ; i++)\
+ \{\
+ 
+\f1\b \cf6 int
+\f0\b0 \cf5  r1(\cf10 rand\cf5 () % b);\
+ \cf12 cout\cf5 <<a[r1];\
+ a.\cf10 erase\cf5 (r1,\cf11 1\cf5 );\
+ b=b-\cf11 1\cf5 ;\
+ \}\
+ \}\
+\
+
+\f1\b \cf6 int
+\f0\b0 \cf5  \cf9 main\cf5 ()\{\
+\
+    
+\f1\b \cf6 bool
+\f0\b0 \cf5  wannaPlayAgain(
+\f1\b \cf6 true
+\f0\b0 \cf5 );\
+    
+\f1\b \cf6 int
+\f0\b0 \cf5  triesLeft(\cf11 5\cf5 );\
+    
+\f1\b \cf6 while
+\f0\b0 \cf5 (wannaPlayAgain==
+\f1\b \cf6 true
+\f0\b0 \cf5 )\
+    \{\
+   \
+    \cf10 srand\cf5 (\cf10 time\cf5 (\cf11 0\cf5 ));\
+    \
+    \
+    \cf8 string\cf5  a;\
+        a = \cf13 randomWord\cf5 ();\
+        \
+   \cf14 // cout << "Saisissez un mot" << endl;\cf5 \
+   \cf14 // cin >> a;\cf5 \
+    \
+     \
+    
+\f1\b \cf6 for
+\f0\b0 \cf5 (
+\f1\b \cf6 int
+\f0\b0 \cf5  z(\cf11 0\cf5 ) ; z<\cf11 11\cf5  ; z++) \{\cf12 cout\cf5 <<\cf10 endl\cf5 ;\}\
+    \
+    
+\f1\b \cf6 int
+\f0\b0 \cf5  b(a.\cf10 size\cf5 ());\
+    
+\f1\b \cf6 int
+\f0\b0 \cf5  b2(a.\cf10 size\cf5 ());\
+\
+    \cf8 string\cf5  motUtilisateur;\
+    \
+     
+\f1\b \cf6 do
+\f0\b0 \cf5     \{\
+           \cf12 cout\cf5  << \cf4 "Quel est ce mot ? (Il vous reste "\cf5 <<triesLeft<<\cf4 " essai(s)"\cf5 <<\cf10 endl\cf5 ;\
+           \cf13 randomString\cf5 (a,b,b2);\
+        \cf12 cout\cf5 <<\cf10 endl\cf5 ;\
+           \cf12 cin\cf5  >> motUtilisateur;\
+           
+\f1\b \cf6 if
+\f0\b0 \cf5  (motUtilisateur == a)\
+           \{\
+              \cf12 cout\cf5  << \cf4 "Bravo !"\cf5  << \cf10 endl\cf5 ;\
+           \}\
+           
+\f1\b \cf6 else
+\f0\b0 \cf5 \
+           \{\
+           \cf12 cout\cf5  << \cf4 "Ce n'est pas le mot !"\cf5  << \cf10 endl\cf5 ;\
+               triesLeft=triesLeft-\cf11 1\cf5 ;\
+           \cf12 cout\cf5  << \cf10 endl\cf5 ;\
+           \}\
+           \}\
+    
+\f1\b \cf6 while
+\f0\b0 \cf5   (motUtilisateur != a && triesLeft>\cf11 0\cf5 );\
+      \
+        
+\f1\b \cf6 if
+\f0\b0 \cf5 (triesLeft==\cf11 0\cf5 )\
+        \{\cf12 cout\cf5 <<\cf4 "Perdu !"\cf5 <<\cf10 endl\cf5 <<\cf10 endl\cf5 ;\}\
+        triesLeft=\cf11 5\cf5 ;\
+        \
+        \cf12 cout\cf5 <<\cf4 "Nouvelle partie ? ('oui'/'non')"\cf5 <<\cf10 endl\cf5 ;\
+        \cf8 string\cf5  userInput;\
+        \cf12 cin\cf5  >> userInput;\
+        
+\f1\b \cf6 bool
+\f0\b0 \cf5  userInputAsBool;\
+        
+\f1\b \cf6 if
+\f0\b0 \cf5  (userInput == \cf4 "oui"\cf5 )\
+        \{wannaPlayAgain = 
+\f1\b \cf6 true
+\f0\b0 \cf5 ;\}\
+        
+\f1\b \cf6 else
+\f0\b0 \cf5  
+\f1\b \cf6 if
+\f0\b0 \cf5  (userInput == \cf4 "non"\cf5 )\
+        \{wannaPlayAgain = 
+\f1\b \cf6 false
+\f0\b0 \cf5 ;\}\
+        \
+        \}\
+    \
+\
+    \cf12 cout\cf5  << \cf10 endl\cf5 ;\
+    
+\f1\b \cf6 return
+\f0\b0 \cf5  \cf11 0\cf5 ;\}\
+\
+}

@@ -1,0 +1,76 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red253\green143\blue63;\red31\green31\blue36;\red252\green106\blue93;
+\red255\green255\blue255;\red252\green95\blue163;\red93\green216\blue255;\red65\green161\blue192;\red208\green168\blue255;
+\red161\green103\blue230;\red108\green121\blue134;\red208\green191\blue105;\red161\green103\blue230;\red103\green183\blue164;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c99131\c56076\c24611;\csgenericrgb\c12054\c12284\c14131;\csgenericrgb\c98912\c41558\c36568;
+\csgenericrgb\c100000\c100000\c100000\c85000;\csgenericrgb\c98839\c37355\c63833;\csgenericrgb\c36295\c84643\c99897;\csgenericrgb\c25490\c63137\c75294;\csgenericrgb\c81569\c65882\c100000;
+\csgenericrgb\c63137\c40392\c90196;\csgenericrgb\c42394\c47462\c52518;\csgenericrgb\c81498\c74939\c41233;\csgenericrgb\c63232\c40219\c90115;\csgenericrgb\c40392\c71765\c64314;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f1 \cf2 \cb3 #include \cf4 <iostream>\cf5 \
+\cf2 #include \cf4 <vector>\cf5 \
+\
+
+\f2\b \cf6 using
+\f1\b0 \cf5  
+\f2\b \cf6 namespace
+\f1\b0 \cf5  \cf7 std\cf5 ;\
+\
+\
+
+\f2\b \cf6 int
+\f1\b0 \cf5  \cf8 taille\cf5 (\cf9 vector\cf5 <
+\f2\b \cf6 int
+\f1\b0 \cf5 > tableau)\
+\{\
+    \
+    
+\f2\b \cf6 int
+\f1\b0 \cf5  t = tableau.\cf10 size\cf5 ();\
+    \
+    
+\f2\b \cf6 return
+\f1\b0 \cf5  t;\
+\}\
+\
+\
+\
+\cf11 /*\cf5 \
+\cf11  \cf5 \
+\cf11  fonction size tableau\cf5 \
+\cf11  track size ind\'e9pendameent de push_back / pop_back\cf5 \
+\cf11  \cf5 \
+\cf11  */\cf5 \
+\
+
+\f2\b \cf6 int
+\f1\b0 \cf5  \cf8 main\cf5 ()\
+\
+\{\
+\
+    \cf9 vector\cf5 <
+\f2\b \cf6 int
+\f1\b0 \cf5 > tableau(\cf12 5\cf5 ,\cf12 4\cf5 );\
+    \
+    \cf13 cout\cf5 <<\cf14 taille\cf5 (tableau)<<\cf10 endl\cf5 ;\
+    \
+    tableau.\cf10 push_back\cf5 (\cf12 8\cf5 );\
+    \
+    \cf13 cout\cf5 <<\cf14 taille\cf5 (tableau)<<\cf10 endl\cf5 ;\
+    \
+    \
+    \
+    
+\f2\b \cf6 return
+\f1\b0 \cf5  \cf12 0\cf5 ;\
+\
+\}\
+}

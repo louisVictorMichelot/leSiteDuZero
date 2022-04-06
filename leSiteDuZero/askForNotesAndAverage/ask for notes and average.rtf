@@ -1,0 +1,83 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red253\green143\blue63;\red31\green31\blue36;\red252\green106\blue93;
+\red255\green255\blue255;\red108\green121\blue134;\red252\green95\blue163;\red93\green216\blue255;\red65\green161\blue192;
+\red208\green168\blue255;\red208\green191\blue105;\red161\green103\blue230;\red161\green103\blue230;}
+{\*\expandedcolortbl;;\csgenericrgb\c99131\c56076\c24611;\csgenericrgb\c12054\c12284\c14131;\csgenericrgb\c98912\c41558\c36568;
+\csgenericrgb\c100000\c100000\c100000\c85000;\csgenericrgb\c42394\c47462\c52518;\csgenericrgb\c98839\c37355\c63833;\csgenericrgb\c36295\c84643\c99897;\csgenericrgb\c25490\c63137\c75294;
+\csgenericrgb\c81569\c65882\c100000;\csgenericrgb\c81498\c74939\c41233;\csgenericrgb\c63232\c40219\c90115;\csgenericrgb\c63137\c40392\c90196;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab593
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 #include \cf4 <iostream>\cf5 \
+\cf2 #include \cf4 <vector>\cf2  \cf6 //Ne pas oublier !\cf5 \
+
+\f1\b \cf7 using
+\f0\b0 \cf5  
+\f1\b \cf7 namespace
+\f0\b0 \cf5  \cf8 std\cf5 ;\
+\
+\
+\
+\
+
+\f1\b \cf7 int
+\f0\b0 \cf5  \cf9 main\cf5 () \{\
+\
+    \cf10 vector\cf5 <
+\f1\b \cf7 double
+\f0\b0 \cf5 > notes; \cf6 //Un tableau vide\cf5 \
+   \
+    
+\f1\b \cf7 int
+\f0\b0 \cf5  nbNotes(\cf11 0\cf5 );\
+    \cf12 cout\cf5 << \cf4 "nombre de notes \'e0 entrer est : "\cf5 ;\
+    \cf12 cin\cf5 >> nbNotes;\
+    \
+    
+\f1\b \cf7 double
+\f0\b0 \cf5  a(\cf11 0\cf5 );\
+    \
+    
+\f1\b \cf7 for
+\f0\b0 \cf5 (
+\f1\b \cf7 int
+\f0\b0 \cf5  c(\cf11 1\cf5 ) ; c <= nbNotes ; c++)\
+    \{\
+        \cf12 cout\cf5 <<\cf4 "remplir note "\cf5 <<c<<\cf13 endl\cf5 ;\
+        \cf12 cin\cf5 >>a;\
+        notes.\cf13 push_back\cf5 (a);\
+    \}\
+    \
+   \cf6 /*\cf5 \
+\cf6     notes.push_back(12.5);  //On ajoute des cases avec les notes\cf5 \
+\cf6     notes.push_back(19.5);\cf5 \
+\cf6     notes.push_back(6);\cf5 \
+\cf6     notes.push_back(12);\cf5 \
+\cf6     notes.push_back(14.5);\cf5 \
+\cf6     notes.push_back(15);\cf5 \
+\cf6    */\cf5 \
+    \
+    
+\f1\b \cf7 double
+\f0\b0 \cf5  moyenne(\cf11 0\cf5 );\
+    
+\f1\b \cf7 for
+\f0\b0 \cf5 (
+\f1\b \cf7 int
+\f0\b0 \cf5  i(\cf11 0\cf5 ); i<notes.\cf13 size\cf5 (); ++i)\
+    \{\
+       moyenne += notes[i];\
+    \}\
+    moyenne /= notes.\cf13 size\cf5 ();\
+\
+    \cf12 cout\cf5  << \cf4 "Votre moyenne est : "\cf5  << moyenne << \cf13 endl\cf5 ;\
+\
+    \
+    \
+    \
+    
+\f1\b \cf7 return
+\f0\b0 \cf5  \cf11 0\cf5 ; \}\
+}
